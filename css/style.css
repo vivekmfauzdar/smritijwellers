@@ -34,7 +34,7 @@ body {
   width: 750px;
   height: 350px;
   background-image: url(/images/Col_Mobile.jpg);
-  background-position: center;
+  background-position: left;
   background-repeat: no-repeat;
   background-size: cover;
   border-top-left-radius: 10px;
@@ -177,6 +177,11 @@ body {
   width: 100%;
 }
 
+.new-arrival-top{
+  display: flex;
+   gap: 20px
+}
+
 .new-item {
   background-color: rgba(255, 255, 255, 0.484);
   display: flex;
@@ -188,11 +193,17 @@ body {
   font-weight: bold;
 }
 
+.cards-container{
+  display: flex; 
+  justify-content: center; 
+  gap: 20px
+}
+
 .cards {
   position: relative;
   width: 100%;
-  max-width: 500px;
-  height: 300px;
+  max-width: 550px;
+  height: 320px;
   border-radius: 12px;
   border: 10px solid white;
   overflow: hidden;
@@ -224,10 +235,15 @@ body {
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
 }
 
-
+p {
+  color: white;
+  font-weight: bold;
+  padding-top: 20px;
+  letter-spacing: 1px;
+  font-size: 16px;
+}
 
 /* responsive ness */
-
 @media (max-width: 768px) {
   .inner-container {
     flex-direction: column;
@@ -251,15 +267,16 @@ body {
     max-width: 100%;
     position: relative;
     bottom: 80px;
-  }
-
-  .product-container {
     padding: 16px;
   }
 
   .arrow {
     display: none !important;
-    /* visibility: collapse; */
+  }
+
+  p{
+      font-size: 12px;
+      font-weight: 500;
   }
 
   .collection-btn {
@@ -276,25 +293,45 @@ body {
 
   .new-arrivals-container {
     padding: 40px;
+    height: 200px;
   }
 
-  .new-arrivals-container-inner {
-    max-width: 800px;
-  }
+  .new-arrival-top{
+  display: flex;
+   gap: 10px;
+   align-items: center;
+  
+}
+
 
   #new-arrivals-heading {
-    font-size: 14px;
+    font-size: 18px;
+  }
+
+  .cards-container{
+  display: flex; 
+  justify-content: center; 
+  gap: 10px
+}
+
+  .cards {
+    /* width: 100%; */
+    max-width: 300px;
+    min-width: 120px;
+    top: 20px;
+    height: 250px;
+    
+
   }
 
   .new-item {
-    background-color: rgba(255, 255, 255, 0.484);
+    background-color: rgba(255, 255, 255, 0.263);
     display: flex;
-    justify-content: top;
-    /* gap: 5px; */
-    padding: 10px 15px;
+    justify-content: center;
+    /* padding: 10px 15px; */
     border-radius: 24px;
     color: white;
     font-weight: bold;
-    font-size: 12px;
+    font-size: 14px;
   }
 }
