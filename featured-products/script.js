@@ -6,7 +6,6 @@
 
   const scrollAmount = 150; 
 
-  
   leftArrow.addEventListener('click', () => {
     carousel.scrollBy({
       left: -scrollAmount,

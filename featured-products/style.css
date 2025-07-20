@@ -1,0 +1,238 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Playfair Display", serif;
+  background: #f5f5f5;
+  width: 100%;
+  letter-spacing: 1px;
+  user-select: none;
+}
+
+.main-container {
+  width: 100%;
+  /* display: flex;
+  justify-content: center;  */
+}
+
+.inner-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  /* flex-wrap: wrap; */
+  padding: 20px;
+  width: 100%;
+  /* max-width: 1800px; */
+  /* margin: 0 auto; */
+}
+
+.img-container {
+  /* max-width: 1020px; */
+  width: 100%;
+  min-width: 50%;
+  height: 380px;
+  min-height: 350px;
+  background-image: url(../images/Col_Mobile.jpg);
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  position: relative;
+}
+
+.product-container {
+  background: linear-gradient(180deg, #cfc1ff 0%, #ffffff 100%);
+  /* padding: 10px; */
+  padding-top: 25px;
+  padding-left: 50px;
+  min-height: 350px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+  /* max-width: 1020px; */
+  min-width: 50%;
+  width: 100%;
+  height: 380px;
+}
+
+.product-carousel {
+  display: flex;
+  gap: 55px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  scrollbar-width: none;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
+
+.product-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.product-card {
+  /* padding: 16px; */
+  width: 160px;
+  text-align: center;
+  flex-shrink: 0;
+  cursor: pointer;
+  font-family: Arial, Helvetica, sans-serif;
+  scroll-snap-align: center;
+  position: relative;
+  z-index: 15;
+}
+
+.product-card .product-img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 12px;
+  border-radius: 20px;
+  border: 4px solid transparent;
+  transition: border 0.3s;
+}
+
+.product-img.selected {
+  border: 2px solid #8a58e5;
+  background: #f0f8ff;
+}
+
+.price {
+  font-size: 16px;
+  font-weight: 600;
+  color: rgb(79, 50, 103);
+  font-family: InterRegular, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: #999;
+  font-size: 10px;
+  margin-left: 4px;
+}
+
+.title {
+  font-size: 12px;
+  color: rgb(157, 159, 164);
+  margin-top: 2px;
+  font-weight: 400;
+  padding: 0px;
+  text-align: center;
+  font-family: InterRegular, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.arrow {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background-color: #4e2c80;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.arrow:hover {
+  background-color: white;
+  color: #4e2c80;
+}
+
+.collection-btn {
+  margin-left: auto;
+  background-color: #4f3267;
+  color: white;
+  padding: 16px 22px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 12px;
+  margin-right: 15px;
+  font-family: "InterSemiBold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* responsive ness */
+@media (max-width: 768px) {
+  .inner-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .img-container {
+    width: 100%;
+    max-width: 800px;
+    height: 200px;
+    min-height: 0px;
+    background-position: left;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 0px;
+    position: relative;
+    z-index: 10;
+  }
+
+  .product-carousel {
+    gap: 25px;
+  }
+
+  .product-container {
+    width: 100%;
+    max-width: 100%;
+    position: relative;
+    bottom: 50px;
+    min-height: 0px;
+    padding: 16px;
+    height: 280px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+
+  .product-card {
+    /* padding: 16px; */
+    width: 120px;
+  }
+  .title {
+    font-size: 8px;
+  }
+
+  .price {
+    font-size: 14px;
+  }
+
+  .arrow {
+    display: none !important;
+  }
+
+  p {
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  .collection-btn {
+    width: 100%;
+    display: block;
+    font-weight: 500;
+    font-size: 12px;
+    text-align: center;
+  }
+  .controls {
+    display: flex;
+    justify-content: center;
+  }
+
+}
