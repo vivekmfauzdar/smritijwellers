@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Promo Section</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", sans-serif;
+        background: #f8f5fc;
+        padding: 30px;
+      }
+
+      .promo-container {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        width: 100%;
+        height: 760px;
+      }
+
+      .promo-left,
+      .promo-top-right,
+      .promo-bottom-right {
+        border-radius: 20px;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .promo-left {
+        flex: 1;
+        width: 100%;
+        background-color: #300546;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .promo-left video {
+        height: 100%;
+        width: auto;
+        min-height: 760px;
+        object-fit: cover;
+      }
+
+      .promo-left img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: left;
+      }
+
+      .promo-content {
+        position: absolute;
+        bottom: 20px;
+        left: 30px;
+        color: #fff;
+      }
+
+      .promo-content h2 {
+        font-size: 48px;
+        font-weight: bold;
+      }
+
+      .promo-content p {
+        font-size: 18px;
+        margin: 10px 0;
+      }
+
+      .promo-content button {
+        background-color: white;
+        color: #300546;
+        border: none;
+        padding: 10px 20px;
+        font-weight: bold;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      .promo-right {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .promo-top-right,
+      .promo-bottom-right {
+        /* height: 440px; */
+        position: relative;
+      }
+
+      .promo-top-right img,
+      .promo-bottom-right img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .text-overlay {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        color: white;
+        text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+      }
+
+      .text-overlay h2 {
+        font-size: 32px;
+        font-weight: 700;
+      }
+
+      .text-overlay p {
+        font-size: 16px;
+        font-weight: 400;
+      }
+
+      @media screen and (max-width: 768px) {
+        .promo-container {
+          flex-direction: column;
+        }
+
+        .promo-left,
+        .promo-right {
+          flex: 1 1 100%;
+        }
+
+        .promo-top-right,
+        .promo-bottom-right {
+          height: 200px;
+        }
+
+        .promo-content h2 {
+          font-size: 32px;
+        }
+
+        .text-overlay h2 {
+          font-size: 24px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="promo-container">
+      <div class="promo-left">
+        <!-- <img src="Desktop.mp4" alt="Pop Promo"> -->
+        <video src="Desktop.mp4" autoplay></video>
+      </div>
+
+      <div class="promo-right">
+        <div class="promo-top-right">
+          <img src="img1.jpg" alt="Swirl Ad" />
+          <div class="text-overlay">
+            <h2>SWIRL</h2>
+            <p>Rhythm of Movement</p>
+          </div>
+        </div>
+        <div class="promo-bottom-right">
+          <img src="img2.jpg" alt="Runway Ad" />
+          <div class="text-overlay">
+            <h2>RUNWAY</h2>
+            <p>SHOP. FLY. SHINE</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+  </body>
+</html>

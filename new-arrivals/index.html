@@ -4,11 +4,175 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Smriti Jwellers</title>
-    <link rel="stylesheet" href="style.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
       rel="stylesheet"
     />
+
+    <style>
+      * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Playfair Display", serif;
+  background: #f5f5f5;
+  width: 100%;
+  letter-spacing: 1px;
+  user-select: none;
+}
+
+.main-container {
+  width: 100%;
+  /* display: flex;
+  justify-content: center;  */
+}
+
+.inner-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  /* flex-wrap: wrap; */
+  padding: 20px;
+  width: 100%;
+  /* max-width: 1800px; */
+  /* margin: 0 auto; */
+}
+
+/* NEW ARRIVALS COLLECTION CSS */
+
+.new-arrivals-container {
+  width: 100%;
+  background-image: url(../images/new-arrivals-bg.webp);
+  height: 400px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding: 90px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.new-arrivals-container-inner {
+  max-width: 1500px;
+  width: 100%;
+}
+
+.new-arrival-top {
+  display: flex;
+  gap: 20px;
+}
+
+.new-item {
+  background-color: rgba(255, 255, 255, 0.484);
+  display: flex;
+  justify-content: top;
+  gap: 5px;
+  padding: 10px 15px;
+  border-radius: 24px;
+  color: white;
+  font-weight: bold;
+}
+
+.cards-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.cards {
+  position: relative;
+  width: 100%;
+  max-width: 550px;
+  height: 320px;
+  border-radius: 12px;
+  border: 10px solid white;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  top: 80px;
+}
+
+.mangalsutra {
+  background-image: url("../images/mangalsutra.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.pendant {
+  background-image: url("/images/pendants.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.cards .label {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+p {
+  color: white;
+  font-weight: bold;
+  padding-top: 20px;
+  letter-spacing: 1px;
+  font-size: 16px;
+}
+
+/* responsive ness */
+@media (max-width: 768px) {
+ 
+  .new-arrivals-container {
+    padding: 40px;
+    height: 200px;
+  }
+
+  .new-arrival-top {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+
+  #new-arrivals-heading {
+    font-size: 18px;
+  }
+
+  .cards-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .cards {
+    /* width: 100%; */
+    max-width: 300px;
+    min-width: 120px;
+    top: 20px;
+    height: 250px;
+  }
+
+  .new-item {
+    background-color: rgba(255, 255, 255, 0.263);
+    display: flex;
+    justify-content: center;
+    /* padding: 10px 15px; */
+    border-radius: 24px;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+  }
+}
+
+    </style>
   </head>
   <body>
     <div class="main-container">

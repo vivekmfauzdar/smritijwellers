@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Modern Carousel</title>
+  <style>
+    body {
+  font-family: sans-serif;
+  background: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+.carousel-container {
+  width: 100%;
+  margin: 40px auto;
+  position: relative;
+  padding: 20px 20px;
+}
+
+.carousel-track {
+  display: flex;
+  overflow: hidden;
+  scroll-behavior: smooth;
+    padding: 30px 0px 28px;
+
+  gap: 20px;
+}
+
+.carousel-slide {
+  flex: 0 0 40%;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.carousel-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-top: 15px;
+  position: absolute;
+  bottom: 0px;
+  right: 80px;
+
+}
+.carousel-nav button {
+  background: #4B0082;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+#counter {
+  font-size: 14px;
+  font-weight: bold;
+  padding: 4px 10px;
+  background: #eee;
+  border-radius: 6px;
+}
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.carousel-dots span {
+  width: 10px;
+  height: 10px;
+  background: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background 0.3s ease;
+}
+
+.carousel-dots .active {
+  background: #333;
+}
+
+/* Responsive tweak */
+@media (max-width: 768px) {
+  .carousel-slide {
+    flex: 0 0 80%;
+  }
+}
+
+  </style>
+</head>
+<body>
+
+  <div class="carousel-container">
+    <div class="carousel-track" id="carousel-track">
+      <div class="carousel-slide"><img src="carousel_1.jpg" /></div>
+      <div class="carousel-slide"><img src="carousel_2.jpg" /></div>
+      <div class="carousel-slide"><img src="carousel_3.jpg" /></div>
+    </div>
+
+    <!-- <div class="carousel-nav">
+      <button id="prevBtn">←</button>
+      <span id="counter">1/3</span>
+      <button id="nextBtn">→</button>
+    </div> -->
+
+     <div class="carousel-nav">
+      <button class="arrow-btn" id="prevBtn">
+         <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="30"
+                  height="30"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentcolor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-arrow-left-icon lucide-arrow-left"
+                >
+                  <path d="m12 19-7-7 7-7" />
+                  <path d="M19 12H5" />
+                </svg>
+      </button>
+      <button class="arrow-btn" id="nextBtn">
+         <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="30"
+                  height="30"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentcolor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-arrow-right-icon lucide-arrow-right"
+                >
+                  <path d="M5 12h14" />
+                  <path d="m12 5 7 7-7 7" />
+                </svg>
+      </button>
+    </div>
+
+    <div class="carousel-dots" id="dots"></div>
+  </div>
+
+  <script>
+    const track = document.getElementById("carousel-track");
+const slides = document.querySelectorAll(".carousel-slide");
+const prevBtn = document.getElementById("prevBtn");
+const nextBtn = document.getElementById("nextBtn");
+const counter = document.getElementById("counter");
+const dotsContainer = document.getElementById("dots");
+
+let currentIndex = 0;
+const totalSlides = slides.length;
+let autoSlideInterval;
+
+function updateCarousel() {
+  const slideWidth = slides[0].offsetWidth + 20; 
+  track.scrollTo({
+    left: currentIndex * slideWidth,
+    behavior: "smooth"
+  });
+
+  counter.textContent = `${currentIndex + 1}/${totalSlides}`;
+
+  [...dotsContainer.children].forEach(dot => dot.classList.remove("active"));
+  if (dotsContainer.children[currentIndex])
+    dotsContainer.children[currentIndex].classList.add("active");
+}
+
+for (let i = 0; i < totalSlides; i++) {
+  const dot = document.createElement("span");
+  if (i === 0) dot.classList.add("active");
+  dotsContainer.appendChild(dot);
+}
+
+function nextSlide() {
+  currentIndex = (currentIndex + 1) % totalSlides;
+  updateCarousel();
+}
+
+function prevSlide() {
+  currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+  updateCarousel();
+}
+
+nextBtn.addEventListener("click", () => {
+  nextSlide();
+  resetAutoSlide();
+});
+
+prevBtn.addEventListener("click", () => {
+  prevSlide();
+  resetAutoSlide();
+});
+
+function startAutoSlide() {
+  autoSlideInterval = setInterval(nextSlide, 2000); // 2 seconds
+}
+
+function resetAutoSlide() {
+  clearInterval(autoSlideInterval);
+  startAutoSlide();
+}
+
+updateCarousel();
+startAutoSlide();
+
+  </script>
+</body>
+</html>
