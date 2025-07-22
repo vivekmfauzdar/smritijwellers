@@ -19,10 +19,10 @@
 
       .promo-container {
         display: flex;
+        align-items: stretch;
         gap: 20px;
-        flex-wrap: wrap;
         width: 100%;
-        height: 760px;
+        height: auto;
       }
 
       .promo-left,
@@ -35,8 +35,6 @@
 
       .promo-left {
         flex: 1;
-        width: 100%;
-        height: 100%;
         background-color: #300546;
         overflow: hidden;
         display: flex;
@@ -46,8 +44,8 @@
 
       .promo-left video {
         height: 100%;
-        width: auto;
-        min-height: 760px;
+        width: 100%;
+        /* min-height: 760px; */
         object-fit: cover;
       }
 
@@ -94,7 +92,6 @@
 
       .promo-top-right,
       .promo-bottom-right {
-        /* height: 440px; */
         position: relative;
       }
 
@@ -122,6 +119,8 @@
         font-size: 16px;
         font-weight: 400;
       }
+
+      
 
       @media screen and (max-width: 768px) {
         .promo-container {
