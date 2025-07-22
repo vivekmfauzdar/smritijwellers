@@ -1,186 +1,289 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Jewelry Section</title>
-  <style>
-    body {
-  font-family: InterSemiBold, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  margin: 0;
-  background-color: #f9f6ff;
-  color: #2f1847;
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Jewelry Section</title>
+    <style>
+      body {
+        font-family: InterSemiBold, "Helvetica Neue", Helvetica, Arial,
+          sans-serif;
+        margin: 0;
+        background-color: #f9f6ff;
+        color: #2f1847;
+      }
 
-}
+      .container {
+        background-color: #f4f0fb;
+        padding: 30px 20px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Creates 2 equal columns */
+        /* display: flex; */
+        /* justify-content: center;
+  align-items: center; */
+        border-radius: 15px;
+        border: 2px solid #e9e1fa;
+        margin: 20px;
+      }
 
-.container{
-  background-color: #f4f0fb;
-  padding: 30px 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 15px;
-  border: 2px solid #E9E1FA;
-  margin: 20px;
+      .jewelry-section {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        /* margin: 30px; */
+        flex-wrap: wrap;
+        justify-content: center;
+      }
 
-}
+      .wrapped-box {
+        text-align: center;
+        width: 250px;
+      }
 
-.jewelry-section {
+      .wrapped-box img {
+        width: 100%;
+        max-width: 180px;
+        /* margin-bottom: 10px; */
+      }
 
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  /* margin: 30px; */
-  flex-wrap: wrap;
-  justify-content: center;
-}
+      .wrapped-box p {
+        font-weight: bold;
+        font-size: 22px;
+      }
 
-.wrapped-box {
-  text-align: center;
-  width: 250px;
-}
+      .jewelry-grid {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        /* flex-wrap: wrap; */
+        gap: 20px;
+        justify-content: center;
+        /* max-width: 1100px; */
+      }
 
-.wrapped-box img {
-  width: 100%;
-  max-width: 180px;
-  /* margin-bottom: 10px; */
-}
+      .item {
+        width: 170px;
+        text-align: center;
+        /* background-color: white; */
+        padding: 10px;
+        border-radius: 20px;
+        transition: transform 0.3s ease;
+      }
 
-.wrapped-box p {
-  font-weight: bold;
-  font-size: 22px;
-}
+      .item img {
+        width: 100%;
+        height: auto;
+        border-radius: 15px;
+        margin-bottom: 10px;
+      }
 
-.jewelry-grid {
-  display: flex;
-  /* flex-wrap: wrap; */
-  gap: 20px;
-  justify-content: center;
-  /* max-width: 1100px; */
-}
+      .item p {
+        font-weight: 600;
+        font-size: 15px;
+        color: #341e4c;
+      }
 
-.item {
-  width: 170px;
-  text-align: center;
-  /* background-color: white; */
-  padding: 10px;
-  border-radius: 20px;
-  transition: transform 0.3s ease;
-}
+      .item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 12px rgba(237, 229, 229, 0.1);
+      }
 
-.item img {
-  width: 100%;
-  height: auto;
-  border-radius: 15px;
-  margin-bottom: 10px;
-}
+      .features {
+        display: flex;
+        justify-content: center;
+        background-color: #f4f0fb;
+        padding: 20px;
+        gap: 40px;
+        margin-top: 10px;
+        flex-wrap: wrap;
+      }
 
-.item p {
-  font-weight: 600;
-  font-size: 15px;
-  color: #341e4c;
-}
+      .feature {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        text-align: center;
+      }
 
-.item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 12px rgba(237, 229, 229, 0.1);
-}
+      .feature svg {
+        width: 25px;
+        height: 25px;
+        margin-bottom: 5px;
+        color: rgb(79, 50, 103);
+        background-color: rgba(135, 207, 235, 0.584);
+        padding: 10px;
+        border-radius: 50%;
+      }
 
-.features {
-  display: flex;
-  justify-content: center;
-  background-color: #f4f0fb;
-  padding: 20px;
-  gap: 40px;
-  margin-top: 10px;
-  flex-wrap: wrap;
-}
+      .feature p {
+        font-weight: bold;
+        font-size: 18px;
+        color: rgb(79, 50, 103);
+      }
 
-.feature {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  text-align: center;
-}
+      /* responsive ness */
+      @media (max-width: 768px) {
+       
 
-.feature svg {
-  width: 25px;
-  height: 25px;
-  margin-bottom: 5px;
-  color: rgb(79, 50, 103);
-  background-color: rgba(135, 207, 235, 0.584);
-  padding: 10px;
-  border-radius: 50%;
-}
+          .container {
+          background-color: #f4f0fb;
+          padding: 0;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          border-radius: 0;
+          width: 100%;
+          border: none;
+          margin: 0px;
+        }
+      
+        .jewelry-grid {
+          grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));
+        }
 
-.feature p {
-  font-weight: bold;
-  font-size: 18px;
-  color: rgb(79, 50, 103);
-}
+        .item {
+          width: 140px;
+          text-align: center;
+          /* background-color: white; */
+          padding: 10px;
+          border-radius: 20px;
+          transition: transform 0.3s ease;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="wrapped-box">
+        <img src="hp-asset1.png" alt="Gift Icon" />
+        <p>Wrapped with Love</p>
+      </div>
 
-  </style>
-</head>
-<body>
-
-  <div class="container">
-     <div class="wrapped-box">
-      <img src="hp-asset1.png" alt="Gift Icon">
-      <p>Wrapped with Love</p>
+      <section class="jewelry-section">
+        <div class="jewelry-grid">
+          <div class="item">
+            <img src="01_Desktop.jpg" alt="Ring" />
+            <p>STACK 'N' GO RINGS</p>
+          </div>
+          <div class="item">
+            <img src="02_Desktop.jpg" alt="Bracelet" />
+            <p>DAY-TO-DAY BRACELETS</p>
+          </div>
+          <div class="item">
+            <img src="03_Desktop.jpg" alt="Earrings" />
+            <p>SOLITAIRE EARRINGS</p>
+          </div>
+          <div class="item">
+            <img src="04_Desktop.jpg" alt="Chains" />
+            <p>EVERYDAY CHAINS</p>
+          </div>
+          <div class="item">
+            <img src="05_Desktop.jpg" alt="Pendant" />
+            <p>GO-TO PENDANTS</p>
+          </div>
+          <div class="item">
+            <img src="06_Desktop.jpg" alt="Style Picks" />
+            <p>STYLE PICKS UNDER 75K</p>
+          </div>
+        </div>
+      </section>
     </div>
 
-  <section class="jewelry-section">
-    
-    <div class="jewelry-grid">
-      <div class="item">
-        <img src="01_Desktop.jpg" alt="Ring">
-        <p>STACK 'N' GO RINGS</p>
+    <section class="features">
+      <div class="feature">
+        <!-- <img src="exchange-icon.png" alt="Exchange Icon"> -->
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="12"
+          height="12"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="lucide lucide-badge-indian-rupee-icon lucide-badge-indian-rupee"
+        >
+          <path
+            d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"
+          />
+          <path d="M8 8h8" />
+          <path d="M8 12h8" />
+          <path d="m13 17-5-1h1a4 4 0 0 0 0-8" />
+        </svg>
+        <p class="feat-p">15 Day Exchange</p>
       </div>
-      <div class="item">
-        <img src="02_Desktop.jpg" alt="Bracelet">
-        <p>DAY-TO-DAY BRACELETS</p>
+      <div class="feature">
+        <!-- <img src="warranty-icon.png" alt="Warranty Icon"> -->
+        <svg
+          style="background-color: rgba(235, 157, 135, 0.584)"
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="lucide lucide-calendar-clock-icon lucide-calendar-clock"
+        >
+          <path d="M16 14v2.2l1.6 1" />
+          <path d="M16 2v4" />
+          <path
+            d="M21 7.5V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h3.5"
+          />
+          <path d="M3 10h5" />
+          <path d="M8 2v4" />
+          <circle cx="16" cy="16" r="6" />
+        </svg>
+        <p class="feat-p">1 Year Warranty</p>
       </div>
-      <div class="item">
-        <img src="03_Desktop.jpg" alt="Earrings">
-        <p>SOLITAIRE EARRINGS</p>
+      <div class="feature">
+        <!-- <img src="certified-icon.png" alt="Certified Icon"> -->
+        <svg
+          style="background-color: rgba(143, 235, 135, 0.584)"
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="lucide lucide-shield-check-icon lucide-shield-check"
+        >
+          <path
+            d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"
+          />
+          <path d="m9 12 2 2 4-4" />
+        </svg>
+        <p class="feat-p">100% Certified</p>
       </div>
-      <div class="item">
-        <img src="04_Desktop.jpg" alt="Chains">
-        <p>EVERYDAY CHAINS</p>
+      <div class="feature">
+        <!-- <img src="lifetime-icon.png" alt="Lifetime Exchange"> -->
+        <svg
+          style="background-color: rgba(235, 232, 135, 0.584)"
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="lucide lucide-refresh-ccw-dot-icon lucide-refresh-ccw-dot"
+        >
+          <path d="M3 2v6h6" />
+          <path d="M21 12A9 9 0 0 0 6 5.3L3 8" />
+          <path d="M21 22v-6h-6" />
+          <path d="M3 12a9 9 0 0 0 15 6.7l3-2.7" />
+          <circle cx="12" cy="12" r="1" />
+        </svg>
+        <p class="feat-p">Lifetime Exchange</p>
       </div>
-      <div class="item">
-        <img src="05_Desktop.jpg" alt="Pendant">
-        <p>GO-TO PENDANTS</p>
-      </div>
-      <div class="item">
-        <img src="06_Desktop.jpg" alt="Style Picks">
-        <p>STYLE PICKS UNDER 75K</p>
-      </div>
-    </div>
-  </section>
-  </div>
-
-  <section class="features">
-    <div class="feature">
-      <!-- <img src="exchange-icon.png" alt="Exchange Icon"> -->
-       <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-badge-indian-rupee-icon lucide-badge-indian-rupee"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="M8 8h8"/><path d="M8 12h8"/><path d="m13 17-5-1h1a4 4 0 0 0 0-8"/></svg>
-      <p class="feat-p">15 Day Exchange</p>
-    </div>
-    <div class="feature">
-      <!-- <img src="warranty-icon.png" alt="Warranty Icon"> -->
-       <svg style="background-color: rgba(235, 157, 135, 0.584);" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calendar-clock-icon lucide-calendar-clock"><path d="M16 14v2.2l1.6 1"/><path d="M16 2v4"/><path d="M21 7.5V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h3.5"/><path d="M3 10h5"/><path d="M8 2v4"/><circle cx="16" cy="16" r="6"/></svg>
-      <p class="feat-p">1 Year Warranty</p>
-    </div>
-    <div class="feature">
-      <!-- <img src="certified-icon.png" alt="Certified Icon"> -->
-       <svg style="background-color: rgba(143, 235, 135, 0.584);" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-check-icon lucide-shield-check"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
-      <p class="feat-p">100% Certified</p>
-    </div>
-    <div class="feature">
-      <!-- <img src="lifetime-icon.png" alt="Lifetime Exchange"> -->
-       <svg style="background-color: rgba(235, 232, 135, 0.584);" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-refresh-ccw-dot-icon lucide-refresh-ccw-dot"><path d="M3 2v6h6"/><path d="M21 12A9 9 0 0 0 6 5.3L3 8"/><path d="M21 22v-6h-6"/><path d="M3 12a9 9 0 0 0 15 6.7l3-2.7"/><circle cx="12" cy="12" r="1"/></svg>
-      <p class="feat-p">Lifetime Exchange</p>
-    </div>
-  </section>
-</body>
+    </section>
+  </body>
 </html>

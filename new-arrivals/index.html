@@ -11,202 +11,165 @@
 
     <style>
       * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
 
-body {
-  font-family: "Playfair Display", serif;
-  background: #f5f5f5;
-  width: 100%;
-  letter-spacing: 1px;
-  user-select: none;
-}
+      body {
+        font-family: "Playfair Display", serif;
+        background: #f5f5f5;
+        width: 100%;
+        letter-spacing: 1px;
+        user-select: none;
+      }
 
-.main-container {
-  width: 100%;
-  /* display: flex;
-  justify-content: center;  */
-}
+      .main-container {
+        width: 100%;
+      }
 
-.inner-container {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: center;
-  /* flex-wrap: wrap; */
-  padding: 20px;
-  width: 100%;
-  /* max-width: 1800px; */
-  /* margin: 0 auto; */
-}
+      .bg-image {
+        width: 100%;
+        background-image: url(../images/new-arrivals-bg.webp);
+        height: 390px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        padding: 60px 90px;
+        position: relative;
+        display: flex;
+        justify-content: flex-start;
+        padding-bottom: 100px;
+        flex-direction: column; /* ensure content stacks properly */
+      }
 
-/* NEW ARRIVALS COLLECTION CSS */
+      #new-arrivals-heading {
+        font-size: 40px;
+      }
 
-.new-arrivals-container {
-  width: 100%;
-  background-image: url(../images/new-arrivals-bg.webp);
-  height: 400px;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  padding: 90px;
-  position: relative;
-  display: flex;
-  justify-content: center;
-}
+      #pforpc {
+        font-size: 18px;
+        letter-spacing: 1;
+      }
 
-.new-arrivals-container-inner {
-  max-width: 1500px;
-  width: 100%;
-}
+   
+      .cards-container {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+      }
 
-.new-arrival-top {
-  display: flex;
-  gap: 20px;
-}
+      .cards {
+        position: relative;
+        width: 100%;
+        max-width: 550px;
+        height: 320px;
+        border-radius: 12px;
+        border: 10px solid white;
+        overflow: hidden;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        margin-top: -140px; /* instead of top: 80px; */
+      }
 
-.new-item {
-  background-color: rgba(255, 255, 255, 0.484);
-  display: flex;
-  justify-content: top;
-  gap: 5px;
-  padding: 10px 15px;
-  border-radius: 24px;
-  color: white;
-  font-weight: bold;
-}
+      .mangalsutra {
+        background-image: url("../images/mangalsutra.webp");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
 
-.cards-container {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
+      .pendant {
+        background-image: url("/images/pendants.webp");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
 
-.cards {
-  position: relative;
-  width: 100%;
-  max-width: 550px;
-  height: 320px;
-  border-radius: 12px;
-  border: 10px solid white;
-  overflow: hidden;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  top: 80px;
-}
+      .cards .label {
+        position: absolute;
+        bottom: 16px;
+        left: 16px;
+        font-size: 18px;
+        font-weight: 600;
+        color: white;
+        text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+      }
 
-.mangalsutra {
-  background-image: url("../images/mangalsutra.webp");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
+      p {
+        color: white;
+        font-weight: bold;
+        padding-top: 20px;
+        letter-spacing: 1px;
+        font-size: 16px;
+      }
 
-.pendant {
-  background-image: url("/images/pendants.webp");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
+      /* responsiveness */
+      @media (max-width: 768px) {
+        .bg-image {
+          padding: 40px;
+          height: 190px;
+          padding-bottom: 80px;
+        }
 
-.cards .label {
-  position: absolute;
-  bottom: 16px;
-  left: 16px;
-  font-size: 18px;
-  font-weight: 600;
-  color: white;
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
-}
+        #new-arrivals-heading {
+          font-size: 18px;
+        }
 
-p {
-  color: white;
-  font-weight: bold;
-  padding-top: 20px;
-  letter-spacing: 1px;
-  font-size: 16px;
-}
+        .cards-container {
+          display: flex;
+          justify-content: center;
+          gap: 10px;
+          padding: 20px;
+        }
 
-/* responsive ness */
-@media (max-width: 768px) {
- 
-  .new-arrivals-container {
-    padding: 40px;
-    height: 200px;
-  }
+        .cards {
+          width: 100%;
+          max-width: 280px;
+          min-width: 120px;
+          margin-top: -50px;
+          height: 250px;
+        }
+     
+        #new-arrivals-heading {
+          font-size: 26px;
+        }
 
-  .new-arrival-top {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-  }
-
-  #new-arrivals-heading {
-    font-size: 18px;
-  }
-
-  .cards-container {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-  }
-
-  .cards {
-    /* width: 100%; */
-    max-width: 300px;
-    min-width: 120px;
-    top: 20px;
-    height: 250px;
-  }
-
-  .new-item {
-    background-color: rgba(255, 255, 255, 0.263);
-    display: flex;
-    justify-content: center;
-    /* padding: 10px 15px; */
-    border-radius: 24px;
-    color: white;
-    font-weight: bold;
-    font-size: 14px;
-  }
-}
-
+        #pforpc {
+          font-size: 12px;
+        }
+      }
     </style>
   </head>
   <body>
-    <div class="main-container">
-      <div class="new-arrivals-container">
-        <div class="new-arrivals-container-inner">
-          <div class="new-arrival-top">
+    <div style="width: 100%">
+      <div class="main-container">
+        <div class="bg-image">
             <h1
               id="new-arrivals-heading"
               style="color: white; letter-spacing: 1px"
             >
               New Arrivals
             </h1>
-            <div class="new-item">
-              <img src="/icons/gem.svg" alt="" /> 500+ New Items
-            </div>
-          </div>
           <p id="pforpc">
             New Arrivals Dropping Daily, Monday through Friday. <br />
             Explore the Latest Launches Now!
           </p>
-          <!-- <p id="pforphone">
-            New Arrivals Dropping Daily, Monday through Friday. <br />
-            Explore the Latest Launches Now!
-          </p> -->
+        </div>
 
-          <div class="cards-container">
-            <div class="cards mangalsutra">
-              <div class="label">Mangalsutra</div>
-            </div>
-            <div class="cards pendant">
-              <div class="label">Pendants</div>
-            </div>
+        <div class="cards-container">
+          <div class="cards mangalsutra">
+            <div class="label">Mangalsutra</div>
+          </div>
+          <div class="cards pendant">
+            <div class="label">Pendants</div>
           </div>
         </div>
+      </div>
+
+      <div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Id dolorem ab
+        nobis beatae. Delectus, dolorem deleniti reprehenderit excepturi cum
+        pariatur.
       </div>
     </div>
 
