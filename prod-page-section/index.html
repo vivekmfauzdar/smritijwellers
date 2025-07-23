@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smriti Jwellers</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: InterSemiBold, "Helvetica Neue", Helvetica, Arial,
+          sans-serif;
+        background: #f5f5f5;
+        width: 100%;
+        user-select: none;
+      }
+
+      .main-container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .main-inner-container {
+        max-width: 400px;
+        width: 100%;
+        padding-top: 60px;
+        padding-bottom: 100px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #Schedulebtn {
+        background-color: rgb(230, 246, 230);
+        border-radius: 12px;
+        height: 32px;
+        width: 100%;
+        border: none;
+        color: rgb(29, 83, 28);
+        font-size: 14px;
+        font-weight: bold;
+      }
+
+      .first-section {
+        display: flex;
+        gap: 10px;
+        border: 1px solid rgb(194, 194, 194);
+        background-color: rgb(242, 247, 241);
+        border-radius: 10px;
+        width: 412px;
+        overflow: hidden;
+        /* padding: 16px; */
+      }
+
+      .img-cont {
+        width: 120px;
+      }
+
+      img {
+        width: 100%;
+        object-fit: cover;
+        overflow: hidden;
+        display: block;
+      }
+
+      .features {
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+        gap: 40px;
+        margin-top: 10px;
+        flex-wrap: wrap;
+      }
+
+      .feature {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+        text-align: center;
+      }
+
+      .feature svg {
+        width: 40px;
+        height: 40px;
+        margin-bottom: 5px;
+        color: rgb(79, 50, 103);
+        background-color: rgba(135, 207, 235, 0.584);
+        padding: 10px;
+        border-radius: 50%;
+      }
+
+      .feature p {
+        font-weight: bold;
+        font-size: 12px;
+        color: rgb(79, 50, 103);
+      }
+
+      .third-section {
+        display: flex;
+        position: relative;
+        background-image: linear-gradient(
+          to right,
+          rgb(255, 249, 220),
+          rgb(255, 240, 216),
+          rgb(255, 231, 217),
+          rgb(255, 224, 222),
+          rgb(255, 219, 229),
+          rgb(255, 213, 232),
+          rgb(252, 208, 238),
+          rgb(245, 204, 246),
+          rgb(235, 197, 248),
+          rgb(223, 190, 250),
+          rgb(208, 184, 252),
+          rgb(190, 179, 255)
+        );
+        padding: 12px 10px 18px 24px;
+        border-radius: 8px;
+        width: 100%;
+      }
+
+      .third-p {
+        font-size: 12px;
+        color: rgb(79, 50, 103);
+        margin-bottom: 4px;
+        font-weight: bold;
+      }
+
+      .third-p-2 {
+        font-size: 10px;
+        color: rgb(79, 50, 103);
+      }
+
+      .third-sec-2 {
+        width: 48px;
+        height: 44px;
+        background: rgb(156, 162, 244);
+        position: absolute;
+        right: 40px;
+        top: 0px;
+      }
+
+      .arrow {
+        width: 0px;
+        height: 0px;
+        border-bottom: 11px solid rgb(156, 162, 244);
+        border-left: 26px solid transparent;
+        border-right: 24px solid transparent;
+        position: absolute;
+        right: 38px;
+        top: 43px;
+        transform: rotate(180deg);
+      }
+
+      .third-sec-p {
+        text-align: center;
+        color: rgb(79, 50, 103);
+        font-size: 12px;
+        padding-top: 16px;
+      }
+
+      .four-sec-h3 {
+        font-size: 18;
+        line-height: 22px;
+        font-family: InterSemiBold, "Helvetica Neue", Helvetica, Arial,
+          sans-serif;
+        color: rgb(79, 50, 103);
+        padding-bottom: 8px;
+      }
+
+      .four-sec-p {
+        font-size: 12px;
+        color: rgb(136, 99, 251);
+        cursor: pointer;
+      }
+
+      .four-sec-btn {
+        color: rgb(79, 50, 103);
+        cursor: pointer;
+        vertical-align: bottom;
+        background: rgb(220, 210, 254);
+        border-radius: 8px;
+        padding: 0px 12px 0px 24px;
+        height: 32px;
+        position: relative;
+        font-size: 12px;
+        font-weight: bold;
+        line-height: 16px;
+        text-transform: uppercase;
+        border: none;
+      }
+
+      .four-section {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding-top: 45px;
+      }
+      .four-section-first {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+      }
+
+      .details-container {
+        border-radius: 8px 8px 0px 0px;
+        overflow: hidden;
+      }
+
+      .details-title {
+        font-size: 12px;
+        color: rgb(79, 50, 103);
+        text-transform: uppercase;
+        background-color: #f9e7d8;
+        font-weight: bold;
+        padding: 12.5px 0px 12.5px 16px;
+      }
+
+      .details-sub-title {
+        font-size: 12px;
+        padding-bottom: 8px;
+        font-weight: bold;
+        color: rgb(79, 50, 103);
+      }
+
+      .details-desc {
+        font-size: 12px;
+        padding-bottom: 8px;
+        color: rgb(78, 85, 94);
+      }
+
+      .details-section {
+        background-color: rgb(247, 237, 230);
+        padding: 10px 10px 10px 15px;
+        display: flex;
+        flex-direction: column;
+      }
+      .details {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      /* responsiveness */
+      @media (max-width: 768px) {
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="main-inner-container">
+        <div class="first-section">
+          <div class="img-cont">
+            <img src="download.jpeg" alt="" />
+          </div>
+          <div
+            style="
+              flex: 1;
+              padding-top: 20px;
+              padding-left: 10px;
+              padding-right: 10px;
+            "
+          >
+            <p
+              style="
+                font-size: 14px;
+                color: rgb(79, 50, 103);
+                font-weight: bold;
+              "
+            >
+              Live Video Call
+            </p>
+            <p
+              style="
+                font-size: 12px;
+                color: rgb(111, 115, 119);
+                margin-bottom: 12px;
+              "
+            >
+              Join a live video call with our consultants to see your favourite
+              designs up close!
+            </p>
+            <button id="Schedulebtn">Schedule a Video Call</button>
+          </div>
+        </div>
+
+        <!-- second section -->
+        <section class="features">
+          <div class="feature">
+            <!-- <img src="exchange-icon.png" alt="Exchange Icon"> -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="12"
+              height="12"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-badge-indian-rupee-icon lucide-badge-indian-rupee"
+            >
+              <path
+                d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"
+              />
+              <path d="M8 8h8" />
+              <path d="M8 12h8" />
+              <path d="m13 17-5-1h1a4 4 0 0 0 0-8" />
+            </svg>
+            <p class="feat-p">
+              100% <br />
+              Certified
+            </p>
+          </div>
+          <div class="feature">
+            <!-- <img src="warranty-icon.png" alt="Warranty Icon"> -->
+            <svg
+              style="background-color: rgba(235, 157, 135, 0.584)"
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-calendar-clock-icon lucide-calendar-clock"
+            >
+              <path d="M16 14v2.2l1.6 1" />
+              <path d="M16 2v4" />
+              <path
+                d="M21 7.5V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h3.5"
+              />
+              <path d="M3 10h5" />
+              <path d="M8 2v4" />
+              <circle cx="16" cy="16" r="6" />
+            </svg>
+            <p class="feat-p">
+              15 Day <br />
+              Money-Back
+            </p>
+          </div>
+          <div class="feature">
+            <!-- <img src="certified-icon.png" alt="Certified Icon"> -->
+            <svg
+              style="background-color: rgba(143, 235, 135, 0.584)"
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-shield-check-icon lucide-shield-check"
+            >
+              <path
+                d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"
+              />
+              <path d="m9 12 2 2 4-4" />
+            </svg>
+            <p class="feat-p">
+              Lifetime <br />
+              Exchange
+            </p>
+          </div>
+          <div class="feature">
+            <!-- <img src="lifetime-icon.png" alt="Lifetime Exchange"> -->
+            <svg
+              style="background-color: rgba(235, 232, 135, 0.584)"
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-refresh-ccw-dot-icon lucide-refresh-ccw-dot"
+            >
+              <path d="M3 2v6h6" />
+              <path d="M21 12A9 9 0 0 0 6 5.3L3 8" />
+              <path d="M21 22v-6h-6" />
+              <path d="M3 12a9 9 0 0 0 15 6.7l3-2.7" />
+              <circle cx="12" cy="12" r="1" />
+            </svg>
+            <p class="feat-p">
+              One Year <br />
+              Warranty
+            </p>
+          </div>
+        </section>
+
+        <!-- third section -->
+        <div style="width: 100%">
+          <div class="third-section">
+            <div>
+              <p class="third-p">Earn 11139 xCLusive points with this order</p>
+              <p class="third-p-2">(1 xClusive point = ₹1)</p>
+            </div>
+
+            <div class="third-sec-2">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                viewBox="0 0 32 32"
+                width="32"
+                height="32"
+                preserveAspectRatio="xMidYMid meet"
+                style="
+                  width: 100%;
+                  height: 100%;
+                  transform: translate3d(0px, 0px, 0px);
+                  content-visibility: visible;
+                "
+              >
+                <defs>
+                  <clipPath id="__lottie_element_3">
+                    <rect width="32" height="32" x="0" y="0"></rect>
+                  </clipPath>
+                  <clipPath id="__lottie_element_5">
+                    <path d="M0,0 L32,0 L32,32 L0,32z"></path>
+                  </clipPath>
+                  <g id="__lottie_element_8">
+                    <g
+                      transform="matrix(1,0,0,1,0,0)"
+                      opacity="1"
+                      style="display: block"
+                    >
+                      <path
+                        fill="rgb(254,195,36)"
+                        fill-opacity="1"
+                        d=" M32,16 C32,24.84000015258789 24.84000015258789,32 16,32 C7.159999847412109,32 0,24.84000015258789 0,16 C0,7.159999847412109 7.159999847412109,0 16,0 C24.84000015258789,0 32,7.159999847412109 32,16 C32,16 32,16 32,16z"
+                      ></path>
+                    </g>
+                  </g>
+                  <filter
+                    id="__lottie_element_13"
+                    x="-100%"
+                    y="-100%"
+                    width="300%"
+                    height="300%"
+                  >
+                    <feGaussianBlur
+                      result="filter_result_0"
+                      stdDeviation="1.6000000476837157 1.6000000476837157"
+                      edgeMode="duplicate"
+                    ></feGaussianBlur>
+                  </filter>
+                  <mask id="__lottie_element_8_1" mask-type="alpha">
+                    <use xlink:href="#__lottie_element_8"></use>
+                  </mask>
+                  <linearGradient
+                    id="__lottie_element_20"
+                    spreadMethod="pad"
+                    gradientUnits="userSpaceOnUse"
+                    x1="8.962390899658203"
+                    y1="0.19753102958202362"
+                    x2="19.50802993774414"
+                    y2="21.010730743408203"
+                  >
+                    <stop offset="0%" stop-color="rgb(200,137,43)"></stop>
+                    <stop offset="98%" stop-color="rgb(255,237,163)"></stop>
+                  </linearGradient>
+                  <linearGradient
+                    id="__lottie_element_24"
+                    spreadMethod="pad"
+                    gradientUnits="userSpaceOnUse"
+                    x1="29.644439697265625"
+                    y1="6.3560590744018555"
+                    x2="8.477458953857422"
+                    y2="30.765640258789062"
+                  >
+                    <stop offset="0%" stop-color="rgb(254,214,74)"></stop>
+                    <stop offset="12%" stop-color="rgb(254,241,78)"></stop>
+                    <stop offset="25%" stop-color="rgb(255,223,108)"></stop>
+                    <stop offset="48%" stop-color="rgb(252,255,103)"></stop>
+                    <stop offset="74%" stop-color="rgb(254,213,69)"></stop>
+                    <stop offset="83%" stop-color="rgb(254,202,69)"></stop>
+                    <stop offset="100%" stop-color="rgb(254,237,68)"></stop>
+                  </linearGradient>
+                </defs>
+                <g clip-path="url(#__lottie_element_3)">
+                  <g
+                    transform="matrix(1,0,0,1,2.229999542236328,2.1499996185302734)"
+                    opacity="1"
+                    style="display: block"
+                  >
+                    <path
+                      fill="rgb(254,195,36)"
+                      fill-opacity="1"
+                      d=" M27.654132843017578,13.827066421508789 C27.654132843017578,21.466520309448242 21.466520309448242,27.654132843017578 13.827066421508789,27.654132843017578 C6.187612533569336,27.654132843017578 0,21.466520309448242 0,13.827066421508789 C0,6.187612533569336 6.187612533569336,0 13.827066421508789,0 C21.466520309448242,0 27.654132843017578,6.187612533569336 27.654132843017578,13.827066421508789 C27.654132843017578,13.827066421508789 27.654132843017578,13.827066421508789 27.654132843017578,13.827066421508789z"
+                    ></path>
+                    <path
+                      stroke="url(#__lottie_element_24)"
+                      stroke-linecap="butt"
+                      stroke-linejoin="miter"
+                      fill-opacity="0"
+                      stroke-miterlimit="4"
+                      stroke-opacity="1"
+                      stroke-width="4.345678806304932"
+                      d=" M27.654132843017578,13.827066421508789 C27.654132843017578,21.466520309448242 21.466520309448242,27.654132843017578 13.827066421508789,27.654132843017578 C6.187612533569336,27.654132843017578 0,21.466520309448242 0,13.827066421508789 C0,6.187612533569336 6.187612533569336,0 13.827066421508789,0 C21.466520309448242,0 27.654132843017578,6.187612533569336 27.654132843017578,13.827066421508789 C27.654132843017578,13.827066421508789 27.654132843017578,13.827066421508789 27.654132843017578,13.827066421508789z"
+                    ></path>
+                  </g>
+                  <g
+                    transform="matrix(1,0,0,1,4.569999694824219,4.559999465942383)"
+                    opacity="1"
+                    style="display: block"
+                  >
+                    <path
+                      stroke="url(#__lottie_element_20)"
+                      stroke-linecap="butt"
+                      stroke-linejoin="miter"
+                      fill-opacity="0"
+                      stroke-miterlimit="4"
+                      stroke-opacity="1"
+                      stroke-width="1"
+                      d=" M22.96493911743164,11.48246955871582 C22.96493911743164,17.823389053344727 17.823389053344727,22.96493911743164 11.48246955871582,22.96493911743164 C5.1415510177612305,22.96493911743164 0,17.823389053344727 0,11.48246955871582 C0,5.1415510177612305 5.1415510177612305,0 11.48246955871582,0 C17.823389053344727,0 22.96493911743164,5.1415510177612305 22.96493911743164,11.48246955871582 C22.96493911743164,11.48246955871582 22.96493911743164,11.48246955871582 22.96493911743164,11.48246955871582z"
+                    ></path>
+                  </g>
+                  <g
+                    transform="matrix(1,0,0,1,13,10)"
+                    opacity="1"
+                    style="display: block"
+                  >
+                    <path
+                      fill="rgb(199,134,35)"
+                      fill-opacity="1"
+                      d=" M7,0 C7,0 6.639999866485596,1.559999942779541 6.639999866485596,1.559999942779541 C6.639999866485596,1.559999942779541 1.2599999904632568,1.5399999618530273 1.2599999904632568,1.5399999618530273 C1.2599999904632568,1.5399999618530273 1.6200000047683716,0 1.6200000047683716,0 C1.6200000047683716,0 7,0 7,0 C7,0 7,0 7,0z M3.6600000858306885,12 C3.6600000858306885,12 0.1599999964237213,7.070000171661377 0.1599999964237213,7.070000171661377 C0.1599999964237213,7.070000171661377 0.15000000596046448,5.769999980926514 0.15000000596046448,5.769999980926514 C0.15000000596046448,5.769999980926514 1.8799999952316284,5.769999980926514 1.8799999952316284,5.769999980926514 C2.2899999618530273,5.769999980926514 2.640000104904175,5.690000057220459 2.9200000762939453,5.53000020980835 C3.200000047683716,5.369999885559082 3.4100000858306885,5.130000114440918 3.549999952316284,4.840000152587891 C3.700000047683716,4.539999961853027 3.7699999809265137,4.199999809265137 3.7699999809265137,3.799999952316284 C3.7699999809265137,3.200000047683716 3.619999885559082,2.7200000286102295 3.319999933242798,2.359999895095825 C3.0199999809265137,2 2.5399999618530273,1.809999942779541 1.8799999952316284,1.809999942779541 C1.8799999952316284,1.809999942779541 0,1.809999942779541 0,1.809999942779541 C0,1.809999942779541 0.38999998569488525,0 0.38999998569488525,0 C0.38999998569488525,0 1.8799999952316284,0 1.8799999952316284,0 C2.7200000286102295,0 3.4200000762939453,0.1599999964237213 3.9700000286102295,0.46000000834465027 C4.519999980926514,0.7599999904632568 4.940000057220459,1.1799999475479126 5.210000038146973,1.7300000190734863 C5.489999771118164,2.2799999713897705 5.619999885559082,2.930000066757202 5.619999885559082,3.6700000762939453 C5.619999885559082,4.320000171661377 5.519999980926514,4.900000095367432 5.320000171661377,5.409999847412109 C5.119999885559082,5.920000076293945 4.800000190734863,6.340000152587891 4.360000133514404,6.670000076293945 C3.9200000762939453,7 3.3499999046325684,7.21999979019165 2.640000104904175,7.329999923706055 C2.640000104904175,7.329999923706055 2.5799999237060547,7.349999904632568 2.5799999237060547,7.349999904632568 C2.5799999237060547,7.349999904632568 5.739999771118164,11.890000343322754 5.739999771118164,11.890000343322754 C5.739999771118164,11.890000343322754 5.739999771118164,12 5.739999771118164,12 C5.739999771118164,12 3.6600000858306885,12 3.6600000858306885,12 C3.6600000858306885,12 3.6600000858306885,12 3.6600000858306885,12z M6.989999771118164,2.930000066757202 C6.989999771118164,2.930000066757202 6.639999866485596,4.460000038146973 6.639999866485596,4.460000038146973 C6.639999866485596,4.460000038146973 0,4.460000038146973 0,4.460000038146973 C0,4.460000038146973 0.36000001430511475,2.930000066757202 0.36000001430511475,2.930000066757202 C0.36000001430511475,2.930000066757202 6.989999771118164,2.930000066757202 6.989999771118164,2.930000066757202 C6.989999771118164,2.930000066757202 6.989999771118164,2.930000066757202 6.989999771118164,2.930000066757202z"
+                    ></path>
+                  </g>
+                  <g
+                    clip-path="url(#__lottie_element_5)"
+                    transform="matrix(1,0,0,1,0,0)"
+                    opacity="1"
+                    style="display: block"
+                  >
+                    <g
+                      mask="url(#__lottie_element_8_1)"
+                      style="mix-blend-mode: screen; display: block"
+                    >
+                      <g
+                        filter="url(#__lottie_element_13)"
+                        transform="matrix(0.9176159501075745,-0.3974682092666626,0.3974682092666626,0.9176159501075745,31.109909057617188,-6.2370805740356445)"
+                        opacity="0.4674656183575419"
+                      >
+                        <path
+                          fill="rgb(255,235,164)"
+                          fill-opacity="1"
+                          d=" M0,0 C0,0 4.440000057220459,0 4.440000057220459,0 C4.440000057220459,0 4.440000057220459,49.779998779296875 4.440000057220459,49.779998779296875 C4.440000057220459,49.779998779296875 0,49.779998779296875 0,49.779998779296875 C0,49.779998779296875 0,0 0,0z"
+                        ></path>
+                      </g>
+                    </g>
+                  </g>
+                </g>
+              </svg>
+            </div>
+            <div class="arrow"></div>
+          </div>
+
+          <p class="third-sec-p">
+            Learn more on about our
+            <span style="color: rgb(222, 87, 229); font-weight: bold"
+              >TERMS &amp; POLICIES</span
+            >
+          </p>
+        </div>
+
+        <!-- four section -->
+        <div class="four-section">
+          <div class="four-section-first">
+            <div>
+              <h3 class="four-sec-h3">Product Details</h3>
+              <p class="four-sec-p">
+                SKU JL05716-2YP500<span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="12"
+                    height="12"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-copy-icon lucide-copy"
+                  >
+                    <rect width="14" height="14" x="8" y="8" rx="2" ry="2" />
+                    <path
+                      d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"
+                    />
+                  </svg>
+                </span>
+              </p>
+            </div>
+            <div>
+              <button name="PriceBreakUp" class="four-sec-btn e9ew4dk10">
+                <div class="css-79elbk"></div>
+                <p class="css-j7n10t eru41wc2">+ Price Breakup</p>
+              </button>
+            </div>
+          </div>
+
+          <div style="font-size: 14px; color: rgb(78, 85, 94)">
+            Set in 22 KT Yellow Gold(16.760 g) with diamonds (1.212 ct ,GH-VS)
+            <br />
+          </div>
+
+          <div class="details">
+            <div class="details-container">
+              <div class="details-title">GOLD</div>
+              <div style="display: grid; grid-template-columns: repeat(3, 1fr)">
+                <div class="details-section">
+                  <p class="details-sub-title">Dimensions</p>
+                  <p class="details-desc">
+                    <span>Length</span> : 43.18cm <br />
+                    (17 inches)
+                  </p>
+                  <p class="details-desc"><span>Height</span> : 23.5 mm</p>
+                </div>
+                <div
+                  class="details-section"
+                  style="border-left: 2px solid #fff3e9"
+                >
+                  <p class="details-sub-title">Weight</p>
+                  <p class="details-desc"><span>Gross</span> : 17.008 g</p>
+                  <p class="details-desc"><span>Height</span> : 23.5 mm</p>
+                </div>
+                <div
+                  class="details-section"
+                  style="border-left: 2px solid #fff3e9"
+                >
+                  <p class="details-sub-title">Purity</p>
+                  <p class="details-desc">22 KT</p>
+                </div>
+              </div>
+            </div>
+            <div class="details-container">
+              <div class="details-title">DIAMOND</div>
+              <div style="display: grid; grid-template-columns: repeat(3, 1fr)">
+                <div class="details-section">
+                  <p class="details-sub-title">Type</p>
+                  <p class="details-desc">GH-VS</p>
+                </div>
+                <div
+                  class="details-section"
+                  style="border-left: 2px solid #fff3e9"
+                >
+                  <p class="details-sub-title">Setting</p>
+                  <p class="details-desc"><span>Setting</span> : Close set</p>
+                  <p class="details-desc"><span>Total No.</span> : 49</p>
+                </div>
+                <div
+                  class="details-section"
+                  style="border-left: 2px solid #fff3e9"
+                >
+                  <p class="details-sub-title">Total Weight</p>
+                  <p class="details-desc">1.212 ct</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="/js/script.js"></script>
+  </body>
+</html>
